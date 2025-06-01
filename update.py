@@ -37,14 +37,14 @@ config_file = {
     if not key.startswith("__")
 }
 
-BOT_TOKEN = config_file.get("BOT_TOKEN", "")
+BOT_TOKEN = config_file.get("7817139269:AAGmWFXVlpEcYECJv-sjZIpbn2nkvSXmzbY", "")
 if not BOT_TOKEN:
     log_error("BOT_TOKEN variable is missing! Exiting now")
     exit(1)
 
 BOT_ID = BOT_TOKEN.split(":", 1)[0]
 
-if DATABASE_URL := config_file.get("DATABASE_URL", "").strip():
+if DATABASE_URL := config_file.get("mongodb+srv://krishpeee2006:0KxUbfM8VfwLJ9Yt@cluster0.oylkcog.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", "").strip():
     try:
         conn = MongoClient(DATABASE_URL, server_api=ServerApi("1"))
         db = conn.mltb
